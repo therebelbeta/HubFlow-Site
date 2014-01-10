@@ -1,0 +1,65 @@
+<!-- <title>Versioning</title> -->
+
+  <div class="maincontent">
+    <!-- top nextbar -->
+    <div class="nextbar nextbar-top">
+      <ul class="nav nav-pills">
+        <li class="prev"><a href="http://datasift.github.io/gitflow/GitFlowForGitHub.html">Prev: Using GitFlow With GitHub</a></li>
+        <li class="next"><a href="http://datasift.github.io/gitflow/Examples.html">Next: Examples</a></li>
+      </ul>
+    </div>
+
+    <!-- main content goes here -->
+    <h1 id="versioning">Versioning</h1>
+
+    <h2 id="introduction">Introduction</h2>
+
+    <p>One of the topics that the <a href="http://nvie.com/posts/a-successful-git-branching-model/">original GitFlow article</a> doesn’t address at all is what scheme to adopt for your software’s version numbers.</p>
+
+    <p>But we believe that life is easier for <strong>everyone</strong> if version numbers <strong>mean the same thing</strong> to everyone who is working on a piece of software.</p>
+
+    <h2 id="semantic_versioning">Semantic Versioning</h2>
+
+    <p><a href="http://semver.org/">Semantic versioning</a> is a very simple scheme built around the <strong>X.Y.Z-buildNo</strong> concept (for example <strong>2.6.0-2</strong> or <strong>2.6.0-SNAPSHOT20120501</strong>):</p>
+
+    <ul>
+      <li>Increment <strong>Z</strong> when you fix something</li>
+
+      <li>Increment <strong>Y</strong> when you add a new feature</li>
+
+      <li>Increment <strong>X</strong> when you break backwards-compatibility or add major features</li>
+
+      <li>Use the <strong>buildNo</strong> to differentiate different builds off the same branch, and to differentiate between development, test and production builds.</li>
+    </ul>
+
+    <h2 id="version_numbers_and_gitflow_branches">Version Numbers And GitFlow Branches</h2>
+
+    <p>Here’s what to build from which branch.</p>
+
+    <ul>
+      <li><strong>Feature branches</strong> and the <strong>develop branch</strong> should always build <strong>snapshot</strong> versions (e.g. 2.6.0-SNAPSHOT201205012).</li>
+
+      <li><strong>Release branches</strong> and <strong>hotfix branches</strong> should always build <strong>release candidate</strong> versions (e.g. 2.6.0-0.rc1).</li>
+
+      <li>The <strong>master branch</strong> should always build unqualified versions - versions without build numbers (e.g. 2.6.0).</li>
+    </ul>
+    <p><span class="label label-important">Please remember:</span></p>
+    <ul>
+      <li>When you create a new branch, you need to <strong>manually update</strong> the software’s version number. The <strong>HubFlow tools</strong> cannot do this for you.</li>
+
+      <li>If you’re using <strong>RPM</strong>, you need to put the <strong>buildNo</strong> part of the version number into the <strong>release</strong> tag in your spec file (or add a <strong>release</strong> tag to the <strong>configuration</strong> section if you’re using Maven’s RPM plugin).</li>
+    </ul>
+
+    <h2 id="what_you_should_install_where">What You Should Install Where</h2>
+
+    <p>As a rule of thumb …</p>
+
+    <ul>
+      <li><strong>Snapshot versions</strong> should only be installed on <strong>dev boxes</strong> and <strong>integration environments</strong>. They shouldn’t be deployed to any of the <strong>dedicated test environments</strong>.</li>
+
+      <li><strong>Release candidates</strong> should be installed in the <strong>dedicated test environments</strong>. In an emergency, a release candidate can be installed into the <strong>production environment</strong>.</li>
+
+      <li><strong>Production releases</strong> can be installed anywhere - and they are the only kind of build that should be installed into the <strong>production environment</strong>.</li>
+    </ul>
+
+  </div> <!-- close body (main content area) -->

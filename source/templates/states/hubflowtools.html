@@ -1,0 +1,103 @@
+  <div class="maincontent">
+    <!-- top nextbar -->
+    <div class="nextbar nextbar-top">
+      <ul class="nav nav-pills">
+        <li class="prev"><a href="http://datasift.github.io/gitflow/IntroducingGitFlow.html">Prev: Introducing GitFlow</a></li>
+        <li class="next"><a href="http://datasift.github.io/gitflow/GitFlowForGitHub.html">Next: Using GitFlow With GitHub</a></li>
+      </ul>
+    </div>
+
+    <!-- main content goes here -->
+    <h1 id="hubflow_the_gitflow_tools_adapted_for_github">HubFlow: The GitFlow Tools Adapted For GitHub</h1>
+
+    <h2 id="introduction">Introduction</h2>
+
+    <p>If you look at <a href="http://nvie.com/posts/a-successful-git-branching-model/">Vincent’s original blog post</a>, he’s listed all of the individual Git commands that you need to use to create all of the different branches in the GitFlow model. They’re all standard Git commands … and if you’re also still getting your head around Git (and still learning why it is different to centralised source control systems like Subversion, or replicated source control systems like Mercurial), it adds to what is already quite a steep learning curve.</p>
+
+    <p>Vincent created an extension for Git, called <a href="https://github.com/nvie/gitflow">GitFlow</a>, which turns most of the steps you need to do into one-line commands. At <a href="http://datasift.com/">DataSift</a>, we used it for six months, and we liked it - but we wanted it to do even more. We also wanted it to work better with GitHub, so to reduce confusion with the original GitFlow tools, we’ve decided to maintain our own fork of the GitFlow tools called <strong>HubFlow</strong>.</p>
+
+    <h2 id="what_is_hubflow">What Is HubFlow?</h2>
+
+    <p><a href="https://github.com/datasift/gitflow">HubFlow</a> is:</p>
+
+    <ul>
+      <li>an extension to the Git command-line tools</li>
+
+      <li>a fork of the original <a href="https://github.com/nvie/gitflow">GitFlow tools</a></li>
+
+      <li>one-line commands for using the <a href="http://datasift.github.io/gitflow/IntroducingGitFlow.html">GitFlow branching model</a> with GitHub</li>
+
+      <li>focused on making it as easy as possible to use GitFlow with GitHub</li>
+    </ul>
+
+    <p>The main differences between the original GitFlow tools and HubFlow are:</p>
+
+    <ul>
+      <li>by default, commands push to / pull from GitHub wherever it is appropriate</li>
+
+      <li>we’ve added additional commands (such as <strong>feature push</strong> and <strong>feature pull</strong>) to fill in some gaps in the original GitFlow tools</li>
+    </ul>
+
+    <h2 id="installing_hubflow">Installing HubFlow</h2>
+
+    <p>Installing the HubFlow tools for the first time is very easy:</p>
+    <div class="highlight"><pre><code class="bash">git clone https://github.com/datasift/gitflow
+      <span class="nb">cd </span>gitflow
+      sudo ./install.sh
+    </code></pre></div>
+    <h2 id="upgrading_hubflow">Upgrading HubFlow</h2>
+
+    <p>If you want to upgrade to the latest version of HubFlow, simply run:</p>
+    <div class="highlight"><pre><code class="bash">sudo git hf upgrade
+    </code></pre></div>
+    <h2 id="listing_the_available_commands">Listing The Available Commands</h2>
+
+    <p>To see all of the commands that HubFlow provides, simply run:</p>
+    <div class="highlight"><pre><code class="bash">git hf <span class="nb">help</span>
+    </code></pre></div>
+    <p>All of the HubFlow commands start with <strong>git hf</strong>, to distinguish them from the original GitFlow commands.</p>
+
+    <!-- facebook likes -->
+    <div class="facebook-likes hidden-phone">
+      <fb:like send="true" width="640" show_faces="false" fb-xfbml-state="rendered" class="fb_edge_widget_with_comment fb_iframe_widget"><span style="height: 20px; width: 640px;"><iframe id="f2552cce8c" name="f24cfacdec" scrolling="no" title="Like this content on Facebook." class="fb_ltr" src="./HubFlow  The GitFlow Tools Adapted For GitHub_files/like(1).html" style="border: none; overflow: hidden; height: 20px; width: 640px;"></iframe></span></fb:like>
+    </div>
+
+    <div class="facebook-likes visible-phone">
+      <fb:like send="true" width="300" show_faces="false" fb-xfbml-state="rendered" class="fb_edge_widget_with_comment fb_iframe_widget"><span style="height: 28px; width: 300px;"><iframe id="f201bbdfe4" name="f2a4cadc7c" scrolling="no" title="Like this content on Facebook." class="fb_ltr" src="./HubFlow  The GitFlow Tools Adapted For GitHub_files/like.html" style="border: none; overflow: hidden; height: 28px; width: 300px;"></iframe></span></fb:like>
+    </div>
+
+    <!-- middle nextbar -->
+    <div class="nextbar nextbar-middle">
+      <ul class="nav nav-pills">
+        <li class="prev"><a href="http://datasift.github.io/gitflow/IntroducingGitFlow.html">Prev: Introducing GitFlow</a></li>
+        <li class="next"><a href="http://datasift.github.io/gitflow/GitFlowForGitHub.html">Next: Using GitFlow With GitHub</a></li>
+      </ul>
+    </div>
+
+    <!-- facebook comments -->
+    <div class="visible-desktop">
+      <div class="well">
+        <h2>Reader Comments And Feedback</h2>
+        <div class="fb-comments hidden-phone fb_iframe_widget" data-href="http://datasift.github.com/gitflow/TheHubFlowTools.html" data-num-posts="5" data-width="640" mobile="false" fb-xfbml-state="rendered"><span style="height: 221px; width: 640px;"><iframe id="f143d6ae4c" name="f369da0688" scrolling="no" title="Facebook Social Plugin" class="fb_ltr" src="./HubFlow  The GitFlow Tools Adapted For GitHub_files/comments(1).html" style="border: none; overflow: hidden; height: 221px; width: 640px;"></iframe></span></div>
+      </div>
+    </div>
+    <div class="visible-tablet">
+      <div class="well">
+        <h2>Reader Comments And Feedback</h2>
+        <div class="fb-comments hidden-phone fb_iframe_widget" data-href="http://datasift.github.com/gitflow/TheHubFlowTools.html" data-num-posts="5" data-width="500" mobile="false" fb-xfbml-state="rendered"><span style="height: 455px; width: 500px;"><iframe id="feb711e78" name="f269f44674" scrolling="no" title="Facebook Social Plugin" class="fb_ltr" src="./HubFlow  The GitFlow Tools Adapted For GitHub_files/comments.html" style="border: none; overflow: hidden; height: 455px; width: 500px;"></iframe></span></div>
+      </div>
+    </div>
+    <div class="visible-phone">
+      <div class="100%">
+        <h2>Reader Comments And Feedback</h2>
+        <div class="fb-comments visible-phone fb_iframe_widget" data-href="http://datasift.github.com/gitflow/TheHubFlowTools.html" data-num-posts="5" data-width="300" fb-xfbml-state="rendered"><span style="height: 455px; width: 300px;"><iframe id="f2e9d1ac7c" name="f1c40e2ccc" scrolling="no" title="Facebook Social Plugin" class="fb_ltr" src="./HubFlow  The GitFlow Tools Adapted For GitHub_files/comments(2).html" style="border: none; overflow: hidden; height: 455px; width: 300px;"></iframe></span></div>
+      </div>
+    </div>
+
+    <div class="nextbar nextbar-bottom">
+      <ul class="nav nav-pills">
+        <li class="prev"><a href="http://datasift.github.io/gitflow/IntroducingGitFlow.html">Prev: Introducing GitFlow</a></li>
+        <li class="next"><a href="http://datasift.github.io/gitflow/GitFlowForGitHub.html">Next: Using GitFlow With GitHub</a></li>
+      </ul>
+    </div>
+  </div> <!-- close body (main content area) -->

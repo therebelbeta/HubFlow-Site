@@ -3,37 +3,105 @@
 <!--[if IE 7]>         <html class="lt-ie9 lt-ie8"> <![endif]-->
 <!--[if IE 8]>         <html class="lt-ie9"> <![endif]-->
 <!--[if gt IE 8]><!--> <html class="modern" ng-app="therebelrobot"> <!--<![endif]-->
-  <head >
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>therebelrobot</title>
-    <meta name="description" content="">
-    <meta name="viewport" content="width=device-width">
-    <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+<head >
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>therebelrobot</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width">
+  <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
 
-    <link rel="stylesheet" href="css/lib/lib.css">
-    <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/lib/lib.css">
+  <link rel="stylesheet" href="css/main.css">
 
-    <script src="js/lib.js"></script>
-    <script src="js/main.js"></script>
+  <script src="js/lib.js"></script>
+  <script src="js/main.js"></script>
 </head>
-  <body>
-    <!--[if lt IE 7]>
-      <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
-    <![endif]-->
+<body>
+  <div class="navbar navbar-fixed-top">
+    <div class="navbar-inner">
+      <div class="container">
+        <img src="./Versioning_files/logo.png" class="pull-left" style="padding-top: 5px; padding-right: 10px;">
+        <a href="http://datasift.github.com/" class="brand">Open Source Projects</a>
 
-    <!-- Add your site or application content here -->
-    <div class="container" ng-view=""></div>
+      </div>
+    </div>
+  </div>
 
-    <!-- Google Analytics: change UA-XXXXX-X to be your site's ID -->
-     <script>
-       (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-       (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-       m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-       })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  <!-- rest of the page -->
+  <div class="container-fluid page">
+    <div class="row-fluid">
+      <!-- sidebar -->
+      <div class="span3">
+        <div class="sidebar well">
+          <div class="sidebody">
+            <h3>Contents</h3>
+            <ol><li><a href="http://datasift.github.io/gitflow/index.html">HubFlow: GitFlow For GitHub</a></li>
+              <ul>
+                <li><a href="http://datasift.github.io/gitflow/index.html#introduction">Introduction</a></li>
+                <li><a href="http://datasift.github.io/gitflow/index.html#what_we_cover">What We Cover</a></li>
+                <li><a href="http://datasift.github.io/gitflow/index.html#licence">Licence</a></li>
+              </ul>
+              <li><a href="http://datasift.github.io/gitflow/IntroducingGitFlow.html">Introducing GitFlow</a></li>
+              <ul>
+                <li><a href="http://datasift.github.io/gitflow/IntroducingGitFlow.html#what_is_gitflow">What Is GitFlow?</a></li>
+                <li><a href="http://datasift.github.io/gitflow/IntroducingGitFlow.html#key_benefits">Key Benefits</a></li>
+                <li><a href="http://datasift.github.io/gitflow/IntroducingGitFlow.html#how_it_works">How It Works</a></li>
+              </ul>
+              <li><a href="http://datasift.github.io/gitflow/TheHubFlowTools.html">HubFlow: The GitFlow Tools Adapted For GitHub</a></li>
+              <ul>
+                <li><a href="http://datasift.github.io/gitflow/TheHubFlowTools.html#introduction">Introduction</a></li>
+                <li><a href="http://datasift.github.io/gitflow/TheHubFlowTools.html#what_is_hubflow">What Is HubFlow?</a></li>
+                <li><a href="http://datasift.github.io/gitflow/TheHubFlowTools.html#installing_hubflow">Installing HubFlow</a></li>
+                <li><a href="http://datasift.github.io/gitflow/TheHubFlowTools.html#upgrading_hubflow">Upgrading HubFlow</a></li>
+                <li><a href="http://datasift.github.io/gitflow/TheHubFlowTools.html#listing_the_available_commands">Listing The Available Commands</a></li>
+              </ul>
+              <li><a href="http://datasift.github.io/gitflow/GitFlowForGitHub.html">Using GitFlow With GitHub</a></li>
+              <ul>
+                <li><a href="http://datasift.github.io/gitflow/GitFlowForGitHub.html#introduction">Introduction</a></li>
+                <li><a href="http://datasift.github.io/gitflow/GitFlowForGitHub.html#the_poster">The Poster</a></li>
+                <li><a href="http://datasift.github.io/gitflow/GitFlowForGitHub.html#1_cloning_a_repo">1. Cloning A Repo</a></li>
+                <li><a href="http://datasift.github.io/gitflow/GitFlowForGitHub.html#2_initialise_the_hubflow_tools">2. Initialise The HubFlow Tools</a></li>
+                <li><a href="http://datasift.github.io/gitflow/GitFlowForGitHub.html#3_create_a_feature_branch">3. Create A Feature Branch</a></li>
+                <li><a href="http://datasift.github.io/gitflow/GitFlowForGitHub.html#4_publish_the_feature_branch_on_github">4. Publish The Feature Branch On GitHub</a></li>
+                <li><a href="http://datasift.github.io/gitflow/GitFlowForGitHub.html#5_keep_up_to_date">5. Keep Up To Date</a></li>
+                <li><a href="http://datasift.github.io/gitflow/GitFlowForGitHub.html#6_collaborate_with_others">6. Collaborate With Others</a></li>
+                <li><a href="http://datasift.github.io/gitflow/GitFlowForGitHub.html#7_merge_your_feature_into_develop_branch">7. Merge Your Feature Into Develop Branch</a></li>
+                <li><a href="http://datasift.github.io/gitflow/GitFlowForGitHub.html#8_creating_releases">8. Creating Releases</a></li>
+                <li><a href="http://datasift.github.io/gitflow/GitFlowForGitHub.html#9_creating_hotfixes">9. Creating Hotfixes</a></li>
+              </ul>
+              <li><a href="./Versioning_files/Versioning.html">Versioning</a></li>
+              <ul>
+                <li><a href="http://datasift.github.io/gitflow/Versioning.html#introduction">Introduction</a></li>
+                <li><a href="http://datasift.github.io/gitflow/Versioning.html#semantic_versioning">Semantic Versioning</a></li>
+                <li><a href="http://datasift.github.io/gitflow/Versioning.html#version_numbers_and_gitflow_branches">Version Numbers And GitFlow Branches</a></li>
+                <li><a href="http://datasift.github.io/gitflow/Versioning.html#what_you_should_install_where">What You Should Install Where</a></li>
+              </ul>
+              <li><a href="http://datasift.github.io/gitflow/Examples.html">Examples</a></li>
+              <ul>
+                <li><a href="http://datasift.github.io/gitflow/Examples.html#introduction">Introduction</a></li>
+                <li><a href="http://datasift.github.io/gitflow/Examples.html#questions">Questions</a></li>
+                <li><a href="http://datasift.github.io/gitflow/Examples.html#answers">Answers</a></li>
+              </ul>
+              <li><a href="http://datasift.github.io/gitflow/ChangeLog.html">ChangeLog</a></li>
+              <ul>
+                <li><a href="http://datasift.github.io/gitflow/ChangeLog.html#v152__29th_july_2013">v1.5.2 - 29th July 2013</a></li>
+                <li><a href="http://datasift.github.io/gitflow/ChangeLog.html#v151__24th_march_2013">v1.5.1 - 24th March 2013</a></li>
+                <li><a href="http://datasift.github.io/gitflow/ChangeLog.html#v142__19th_february_2013">v1.4.2 - 19th February 2013</a></li>
+                <li><a href="http://datasift.github.io/gitflow/ChangeLog.html#v141__12th_october_2012">v1.4.1 - 12th October 2012</a></li>
+                <li><a href="http://datasift.github.io/gitflow/ChangeLog.html#v140__3rd_october_2012">v1.4.0 - 3rd October 2012</a></li>
+              </ul>
 
-       ga('create', 'UA-XXXXX-X');
-       ga('send', 'pageview');
-    </script>
+            </ol>
+
+          </div>
+        </div>
+      </div>
+      <!-- main content -->
+      <div class="span9" ng-view>
+
+      </div>
+    </div> <!-- close fluid-row -->
+  </div> <!-- close fluid container -->
 </body>
 </html>
