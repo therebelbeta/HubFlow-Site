@@ -1,4 +1,4 @@
-var App = angular.module('therebelrobot', ['ngRoute','templates']);
+var App = angular.module('hubflow', ['ngRoute','templates']);
 
 App.config(function ($routeProvider) {
     $routeProvider

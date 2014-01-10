@@ -3,7 +3,6 @@ source/lib
 source/js/templates.js
 
 .DS_Store
-build/*
 secret.json
 vendor
 
