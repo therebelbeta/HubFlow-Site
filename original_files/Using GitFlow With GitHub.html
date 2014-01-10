@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<!-- saved from url=(0055)http://datasift.github.io/gitflow/GitFlowForGitHub.html -->
+<html lang="en" xmlns:fb="http://ogp.me/ns/fb#"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <title>Using GitFlow With GitHub</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta description="The SOA testing tool from DataSift">
+    <meta author="DataSift">
+
+    <link href="http://datasift.github.io/gitflow/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="http://datasift.github.io/gitflow/bootstrap/css/bootstrap-responsive.min.css" rel="stylesheet">
+    <link href="http://datasift.github.io/gitflow/hornet.css" rel="stylesheet">
+  <style type="text/css"></style><style>  @font-face {      font-family: 'NotoSans';      src: url('chrome-extension://annopcfmbiofommjmcmcfmhklhgbhkce/assets/fonts/NotoSans-Regular.ttf');      font-weight: normal;   }  </style><style type="text/css">.fb_hidden{position:absolute;top:-10000px;z-index:10001}
+.fb_invisible{display:none}
+.fb_reset{background:none;border:0;border-spacing:0;color:#000;cursor:auto;direction:ltr;font-family:"lucida grande", tahoma, verdana, arial, sans-serif;font-size:11px;font-style:normal;font-variant:normal;font-weight:normal;letter-spacing:normal;line-height:1;margin:0;overflow:visible;padding:0;text-align:left;text-decoration:none;text-indent:0;text-shadow:none;text-transform:none;visibility:visible;white-space:normal;word-spacing:normal}
+.fb_reset > div{overflow:hidden}
+.fb_link img{border:none}
+.fb_dialog{background:rgba(82, 82, 82, .7);position:absolute;top:-10000px;z-index:10001}
+.fb_dialog_advanced{padding:10px;-moz-border-radius:8px;-webkit-border-radius:8px;border-radius:8px}
+.fb_dialog_content{background:#fff;color:#333}
+.fb_dialog_close_icon{background:url(http://static.ak.fbcdn.net/rsrc.php/v2/yq/r/IE9JII6Z1Ys.png) no-repeat scroll 0 0 transparent;_background-image:url(http://static.ak.fbcdn.net/rsrc.php/v2/yL/r/s816eWC-2sl.gif);cursor:pointer;display:block;height:15px;position:absolute;right:18px;top:17px;width:15px;top:8px\9;right:7px\9}
+.fb_dialog_mobile .fb_dialog_close_icon{top:5px;left:5px;right:auto}
+.fb_dialog_padding{background-color:transparent;position:absolute;width:1px;z-index:-1}
+.fb_dialog_close_icon:hover{background:url(http://static.ak.fbcdn.net/rsrc.php/v2/yq/r/IE9JII6Z1Ys.png) no-repeat scroll 0 -15px transparent;_background-image:url(http://static.ak.fbcdn.net/rsrc.php/v2/yL/r/s816eWC-2sl.gif)}
+.fb_dialog_close_icon:active{background:url(http://static.ak.fbcdn.net/rsrc.php/v2/yq/r/IE9JII6Z1Ys.png) no-repeat scroll 0 -30px transparent;_background-image:url(http://static.ak.fbcdn.net/rsrc.php/v2/yL/r/s816eWC-2sl.gif)}
+.fb_dialog_loader{background-color:#f2f2f2;border:1px solid #606060;font-size:24px;padding:20px}
+.fb_dialog_top_left,
+.fb_dialog_top_right,
+.fb_dialog_bottom_left,
+.fb_dialog_bottom_right{height:10px;width:10px;overflow:hidden;position:absolute}
+.fb_dialog_top_left{background:url(http://static.ak.fbcdn.net/rsrc.php/v2/ye/r/8YeTNIlTZjm.png) no-repeat 0 0;left:-10px;top:-10px}
+.fb_dialog_top_right{background:url(http://static.ak.fbcdn.net/rsrc.php/v2/ye/r/8YeTNIlTZjm.png) no-repeat 0 -10px;right:-10px;top:-10px}
+.fb_dialog_bottom_left{background:url(http://static.ak.fbcdn.net/rsrc.php/v2/ye/r/8YeTNIlTZjm.png) no-repeat 0 -20px;bottom:-10px;left:-10px}
+.fb_dialog_bottom_right{background:url(http://static.ak.fbcdn.net/rsrc.php/v2/ye/r/8YeTNIlTZjm.png) no-repeat 0 -30px;right:-10px;bottom:-10px}
+.fb_dialog_vert_left,
+.fb_dialog_vert_right,
+.fb_dialog_horiz_top,
+.fb_dialog_horiz_bottom{position:absolute;background:#525252;filter:alpha(opacity=70);opacity:.7}
+.fb_dialog_vert_left,
+.fb_dialog_vert_right{width:10px;height:100%}
+.fb_dialog_vert_left{margin-left:-10px}
+.fb_dialog_vert_right{right:0;margin-right:-10px}
+.fb_dialog_horiz_top,
+.fb_dialog_horiz_bottom{width:100%;height:10px}
+.fb_dialog_horiz_top{margin-top:-10px}
+.fb_dialog_horiz_bottom{bottom:0;margin-bottom:-10px}
+.fb_dialog_iframe{line-height:0}
+.fb_dialog_content .dialog_title{background:#6d84b4;border:1px solid #3b5998;color:#fff;font-size:14px;font-weight:bold;margin:0}
+.fb_dialog_content .dialog_title > span{background:url(http://static.ak.fbcdn.net/rsrc.php/v2/yd/r/Cou7n-nqK52.gif)
+no-repeat 5px 50%;float:left;padding:5px 0 7px 26px}
+body.fb_hidden{-webkit-transform:none;height:100%;margin:0;overflow:visible;position:absolute;top:-10000px;left:0;width:100%}
+.fb_dialog.fb_dialog_mobile.loading{background:url(http://static.ak.fbcdn.net/rsrc.php/v2/ya/r/3rhSv5V8j3o.gif)
+white no-repeat 50% 50%;min-height:100%;min-width:100%;overflow:hidden;position:absolute;top:0;z-index:10001}
+.fb_dialog.fb_dialog_mobile.loading.centered{max-height:590px;min-height:590px;max-width:500px;min-width:500px}
+#fb-root #fb_dialog_ipad_overlay{background:rgba(0, 0, 0, .45);position:absolute;left:0;top:0;width:100%;min-height:100%;z-index:10000}
+#fb-root #fb_dialog_ipad_overlay.hidden{display:none}
+.fb_dialog.fb_dialog_mobile.loading iframe{visibility:hidden}
+.fb_dialog_content .dialog_header{-webkit-box-shadow:white 0 1px 1px -1px inset;background:-webkit-gradient(linear, 0% 0%, 0% 100%, from(#738ABA), to(#2C4987));border-bottom:1px solid;border-color:#1d4088;color:#fff;font:14px Helvetica, sans-serif;font-weight:bold;text-overflow:ellipsis;text-shadow:rgba(0, 30, 84, .296875) 0 -1px 0;vertical-align:middle;white-space:nowrap}
+.fb_dialog_content .dialog_header table{-webkit-font-smoothing:subpixel-antialiased;height:43px;width:100%
+}
+.fb_dialog_content .dialog_header td.header_left{font-size:12px;padding-left:5px;vertical-align:middle;width:60px
+}
+.fb_dialog_content .dialog_header td.header_right{font-size:12px;padding-right:5px;vertical-align:middle;width:60px
+}
+.fb_dialog_content .touchable_button{background:-webkit-gradient(linear, 0% 0%, 0% 100%, from(#4966A6),
+color-stop(0.5, #355492), to(#2A4887));border:1px solid #29447e;-webkit-background-clip:padding-box;-webkit-border-radius:3px;-webkit-box-shadow:rgba(0, 0, 0, .117188) 0 1px 1px inset,
+rgba(255, 255, 255, .167969) 0 1px 0;display:inline-block;margin-top:3px;max-width:85px;line-height:18px;padding:4px 12px;position:relative}
+.fb_dialog_content .dialog_header .touchable_button input{border:none;background:none;color:#fff;font:12px Helvetica, sans-serif;font-weight:bold;margin:2px -12px;padding:2px 6px 3px 6px;text-shadow:rgba(0, 30, 84, .296875) 0 -1px 0}
+.fb_dialog_content .dialog_header .header_center{color:#fff;font-size:16px;font-weight:bold;line-height:18px;text-align:center;vertical-align:middle}
+.fb_dialog_content .dialog_content{background:url(http://static.ak.fbcdn.net/rsrc.php/v2/y9/r/jKEcVPZFk-2.gif) no-repeat 50% 50%;border:1px solid #555;border-bottom:0;border-top:0;height:150px}
+.fb_dialog_content .dialog_footer{background:#f2f2f2;border:1px solid #555;border-top-color:#ccc;height:40px}
+#fb_dialog_loader_close{float:left}
+.fb_dialog.fb_dialog_mobile .fb_dialog_close_button{text-shadow:rgba(0, 30, 84, .296875) 0 -1px 0}
+.fb_dialog.fb_dialog_mobile .fb_dialog_close_icon{visibility:hidden}
+.fb_iframe_widget{display:inline-block;position:relative}
+.fb_iframe_widget span{display:inline-block;position:relative;text-align:justify}
+.fb_iframe_widget iframe{position:absolute}
+.fb_iframe_widget_lift{z-index:1}
+.fb_hide_iframes iframe{position:relative;left:-10000px}
+.fb_iframe_widget_loader{position:relative;display:inline-block}
+.fb_iframe_widget_fluid{display:inline}
+.fb_iframe_widget_fluid span{width:100%}
+.fb_iframe_widget_loader iframe{min-height:32px;z-index:2;zoom:1}
+.fb_iframe_widget_loader .FB_Loader{background:url(http://static.ak.fbcdn.net/rsrc.php/v2/y9/r/jKEcVPZFk-2.gif) no-repeat;height:32px;width:32px;margin-left:-16px;position:absolute;left:50%;z-index:4}
+.fb_connect_bar_container div,
+.fb_connect_bar_container span,
+.fb_connect_bar_container a,
+.fb_connect_bar_container img,
+.fb_connect_bar_container strong{background:none;border-spacing:0;border:0;direction:ltr;font-style:normal;font-variant:normal;letter-spacing:normal;line-height:1;margin:0;overflow:visible;padding:0;text-align:left;text-decoration:none;text-indent:0;text-shadow:none;text-transform:none;visibility:visible;white-space:normal;word-spacing:normal;vertical-align:baseline}
+.fb_connect_bar_container{position:fixed;left:0 !important;right:0 !important;height:42px !important;padding:0 25px !important;margin:0 !important;vertical-align:middle !important;border-bottom:1px solid #333 !important;background:#3b5998 !important;z-index:99999999 !important;overflow:hidden !important}
+.fb_connect_bar_container_ie6{position:absolute;top:expression(document.compatMode=="CSS1Compat"? document.documentElement.scrollTop+"px":body.scrollTop+"px")}
+.fb_connect_bar{position:relative;margin:auto;height:100%;width:100%;padding:6px 0 0 0 !important;background:none;color:#fff !important;font-family:"lucida grande", tahoma, verdana, arial, sans-serif !important;font-size:13px !important;font-style:normal !important;font-variant:normal !important;font-weight:normal !important;letter-spacing:normal !important;line-height:1 !important;text-decoration:none !important;text-indent:0 !important;text-shadow:none !important;text-transform:none !important;white-space:normal !important;word-spacing:normal !important}
+.fb_connect_bar a:hover{color:#fff}
+.fb_connect_bar .fb_profile img{height:30px;width:30px;vertical-align:middle;margin:0 6px 5px 0}
+.fb_connect_bar div a,
+.fb_connect_bar span,
+.fb_connect_bar span a{color:#bac6da;font-size:11px;text-decoration:none}
+.fb_connect_bar .fb_buttons{float:right;margin-top:7px}
+.fb_edge_widget_with_comment{position:relative;*z-index:1000}
+.fb_edge_widget_with_comment span.fb_edge_comment_widget{position:absolute}
+.fb_edge_widget_with_comment span.fb_send_button_form_widget{z-index:1}
+.fb_edge_widget_with_comment span.fb_send_button_form_widget .FB_Loader{left:0;top:1px;margin-top:6px;margin-left:0;background-position:50% 50%;background-color:#fff;height:150px;width:394px;border:1px #666 solid;border-bottom:2px solid #283e6c;z-index:1}
+.fb_edge_widget_with_comment span.fb_send_button_form_widget.dark .FB_Loader{background-color:#000;border-bottom:2px solid #ccc}
+.fb_edge_widget_with_comment span.fb_send_button_form_widget.siderender
+.FB_Loader{margin-top:0}
+.fbpluginrecommendationsbarleft,
+.fbpluginrecommendationsbarright{position:fixed !important;bottom:0;z-index:999}
+.fbpluginrecommendationsbarleft{left:10px}
+.fbpluginrecommendationsbarright{right:10px}</style></head>
+  <body>
+    <!-- facebook comments -->
+    <div id="fb-root" class=" fb_reset"><div style="position: absolute; top: -10000px; height: 0px; width: 0px;"><div><iframe name="fb_xdm_frame_http" frameborder="0" allowtransparency="true" scrolling="no" id="fb_xdm_frame_http" aria-hidden="true" title="Facebook Cross Domain Communication Frame" tab-index="-1" src="./Using GitFlow With GitHub_files/xd_arbiter.html" style="border: none;"></iframe><iframe name="fb_xdm_frame_https" frameborder="0" allowtransparency="true" scrolling="no" id="fb_xdm_frame_https" aria-hidden="true" title="Facebook Cross Domain Communication Frame" tab-index="-1" src="./Using GitFlow With GitHub_files/xd_arbiter(1).html" style="border: none;"></iframe></div></div><div style="position: absolute; top: -10000px; height: 0px; width: 0px;"><div><iframe name="fbc4d03f" frameborder="0" allowtransparency="true" scrolling="no" src="./Using GitFlow With GitHub_files/ping.html" style="display: none;"></iframe></div></div></div>
+  <script id="facebook-jssdk" async="" src="./Using GitFlow With GitHub_files/all.js"></script><script>
+    window.fbAsyncInit = function() {
+      FB.init({
+        appId      : '338583862880236', // App ID
+        channelUrl : '/GitFlowForGitHub.html/channel.html', // Channel File
+        status     : true, // check login status
+        cookie     : true, // enable cookies to allow the server to access the session
+        xfbml      : true  // parse XFBML
+      });
+
+      // Additional initialization code here
+    };
+
+    // Load the SDK Asynchronously
+    (function(d){
+       var js, id = 'facebook-jssdk', ref = d.getElementsByTagName('script')[0];
+       if (d.getElementById(id)) {return;}
+       js = d.createElement('script'); js.id = id; js.async = true;
+       js.src = "//connect.facebook.net/en_US/all.js";
+       ref.parentNode.insertBefore(js, ref);
+     }(document));
+  </script>
+
+    <!-- top navbar -->
+    <div class="navbar navbar-fixed-top">
+      <div class="navbar-inner">
+        <div class="container">
+          <img src="./Using GitFlow With GitHub_files/logo.png" class="pull-left" style="padding-top: 5px; padding-right: 10px;">
+          <a href="http://datasift.github.com/" class="brand">Open Source Projects</a>
+          
+        </div>
+      </div>
+    </div>
+
+    <!-- rest of the page -->
+    <div class="container-fluid page">
+      <div class="row-fluid">
+        <!-- sidebar -->
+        <div class="span3">
+          <div class="sidebar well">
+            <div class="sidebody">
+                <h3>Contents</h3>
+<ol><li><a href="http://datasift.github.io/gitflow/index.html">HubFlow: GitFlow For GitHub</a></li>
+<ul>
+<li><a href="http://datasift.github.io/gitflow/index.html#introduction">Introduction</a></li>
+<li><a href="http://datasift.github.io/gitflow/index.html#what_we_cover">What We Cover</a></li>
+<li><a href="http://datasift.github.io/gitflow/index.html#licence">Licence</a></li>
+</ul>
+<li><a href="http://datasift.github.io/gitflow/IntroducingGitFlow.html">Introducing GitFlow</a></li>
+<ul>
+<li><a href="http://datasift.github.io/gitflow/IntroducingGitFlow.html#what_is_gitflow">What Is GitFlow?</a></li>
+<li><a href="http://datasift.github.io/gitflow/IntroducingGitFlow.html#key_benefits">Key Benefits</a></li>
+<li><a href="http://datasift.github.io/gitflow/IntroducingGitFlow.html#how_it_works">How It Works</a></li>
+</ul>
+<li><a href="http://datasift.github.io/gitflow/TheHubFlowTools.html">HubFlow: The GitFlow Tools Adapted For GitHub</a></li>
+<ul>
+<li><a href="http://datasift.github.io/gitflow/TheHubFlowTools.html#introduction">Introduction</a></li>
+<li><a href="http://datasift.github.io/gitflow/TheHubFlowTools.html#what_is_hubflow">What Is HubFlow?</a></li>
+<li><a href="http://datasift.github.io/gitflow/TheHubFlowTools.html#installing_hubflow">Installing HubFlow</a></li>
+<li><a href="http://datasift.github.io/gitflow/TheHubFlowTools.html#upgrading_hubflow">Upgrading HubFlow</a></li>
+<li><a href="http://datasift.github.io/gitflow/TheHubFlowTools.html#listing_the_available_commands">Listing The Available Commands</a></li>
+</ul>
+<li><a href="./Using GitFlow With GitHub_files/Using GitFlow With GitHub.html">Using GitFlow With GitHub</a></li>
+<ul>
+<li><a href="http://datasift.github.io/gitflow/GitFlowForGitHub.html#introduction">Introduction</a></li>
+<li><a href="http://datasift.github.io/gitflow/GitFlowForGitHub.html#the_poster">The Poster</a></li>
+<li><a href="http://datasift.github.io/gitflow/GitFlowForGitHub.html#1_cloning_a_repo">1. Cloning A Repo</a></li>
+<li><a href="http://datasift.github.io/gitflow/GitFlowForGitHub.html#2_initialise_the_hubflow_tools">2. Initialise The HubFlow Tools</a></li>
+<li><a href="http://datasift.github.io/gitflow/GitFlowForGitHub.html#3_create_a_feature_branch">3. Create A Feature Branch</a></li>
+<li><a href="http://datasift.github.io/gitflow/GitFlowForGitHub.html#4_publish_the_feature_branch_on_github">4. Publish The Feature Branch On GitHub</a></li>
+<li><a href="http://datasift.github.io/gitflow/GitFlowForGitHub.html#5_keep_up_to_date">5. Keep Up To Date</a></li>
+<li><a href="http://datasift.github.io/gitflow/GitFlowForGitHub.html#6_collaborate_with_others">6. Collaborate With Others</a></li>
+<li><a href="http://datasift.github.io/gitflow/GitFlowForGitHub.html#7_merge_your_feature_into_develop_branch">7. Merge Your Feature Into Develop Branch</a></li>
+<li><a href="http://datasift.github.io/gitflow/GitFlowForGitHub.html#8_creating_releases">8. Creating Releases</a></li>
+<li><a href="http://datasift.github.io/gitflow/GitFlowForGitHub.html#9_creating_hotfixes">9. Creating Hotfixes</a></li>
+</ul>
+<li><a href="http://datasift.github.io/gitflow/Versioning.html">Versioning</a></li>
+<ul>
+<li><a href="http://datasift.github.io/gitflow/Versioning.html#introduction">Introduction</a></li>
+<li><a href="http://datasift.github.io/gitflow/Versioning.html#semantic_versioning">Semantic Versioning</a></li>
+<li><a href="http://datasift.github.io/gitflow/Versioning.html#version_numbers_and_gitflow_branches">Version Numbers And GitFlow Branches</a></li>
+<li><a href="http://datasift.github.io/gitflow/Versioning.html#what_you_should_install_where">What You Should Install Where</a></li>
+</ul>
+<li><a href="http://datasift.github.io/gitflow/Examples.html">Examples</a></li>
+<ul>
+<li><a href="http://datasift.github.io/gitflow/Examples.html#introduction">Introduction</a></li>
+<li><a href="http://datasift.github.io/gitflow/Examples.html#questions">Questions</a></li>
+<li><a href="http://datasift.github.io/gitflow/Examples.html#answers">Answers</a></li>
+</ul>
+<li><a href="http://datasift.github.io/gitflow/ChangeLog.html">ChangeLog</a></li>
+<ul>
+<li><a href="http://datasift.github.io/gitflow/ChangeLog.html#v152__29th_july_2013">v1.5.2 - 29th July 2013</a></li>
+<li><a href="http://datasift.github.io/gitflow/ChangeLog.html#v151__24th_march_2013">v1.5.1 - 24th March 2013</a></li>
+<li><a href="http://datasift.github.io/gitflow/ChangeLog.html#v142__19th_february_2013">v1.4.2 - 19th February 2013</a></li>
+<li><a href="http://datasift.github.io/gitflow/ChangeLog.html#v141__12th_october_2012">v1.4.1 - 12th October 2012</a></li>
+<li><a href="http://datasift.github.io/gitflow/ChangeLog.html#v140__3rd_october_2012">v1.4.0 - 3rd October 2012</a></li>
+</ul>
+
+</ol>
+
+            </div>
+          </div>
+        </div>
+        <!-- main content -->
+        <div class="span9">
+          <div class="maincontent">
+            <!-- top nextbar -->
+            <div class="nextbar nextbar-top">
+              <ul class="nav nav-pills">
+                <li class="prev"><a href="http://datasift.github.io/gitflow/TheHubFlowTools.html">Prev: HubFlow: The GitFlow Tools Adapted For GitHub</a></li>
+                <li class="next"><a href="http://datasift.github.io/gitflow/Versioning.html">Next: Versioning</a></li>
+              </ul>
+            </div>
+
+            <!-- main content goes here -->
+            <h1 id="using_gitflow_with_github">Using GitFlow With GitHub</h1>
+
+<h2 id="introduction">Introduction</h2>
+
+<p>This is our recommended workflow for using:</p>
+
+<ul>
+<li><a href="http://nvie.com/posts/a-successful-git-branching-model/">The GitFlow branching model</a></li>
+
+<li>+ <a href="https://github.com/datasift/gitflow">HubFlow, our fork of the GitFlow tools</a></li>
+
+<li>+ <a href="https://github.com/">GitHub</a></li>
+</ul>
+
+<p>together. We’re assuming you’ve already looked at stock GitFlow, and understand the concepts of <strong>feature branches</strong>, <strong>release branches</strong>, <strong>hotfixes</strong>, <strong>releases</strong> and the <strong>develop branch</strong>. If you haven’t, please first read:</p>
+
+<ul>
+<li><a href="http://nvie.com/posts/a-successful-git-branching-model/">GitFlow</a> (Vincent Driessen’s original blog post)</li>
+
+<li><a href="http://datasift.github.com/gitflow/IntroducingGitFlow.html">Introducing GitFlow</a> (our own introduction to GitFlow)</li>
+</ul>
+<p><span class="label label-info">Please note:</span></p>
+<ul>
+<li>At this time, this workflow is designed for developers who belong to the same GitHub organisation. Although you are welcome to use it for opensource projects, it is designed for companies like <a href="http://datasift.com/">DataSift</a> who are using private repos on GitHub.</li>
+
+<li>I’ll release an alternative version, that supports GitHub’s fork &amp; clone model, at some point in the future, including full tool support.</li>
+</ul>
+
+<h2 id="the_poster">The Poster</h2>
+
+<p><img alt="GitFlow For GitHub" src="./Using GitFlow With GitHub_files/GitFlowWorkflowNoFork.png"></p>
+
+<p><a href="http://datasift.github.io/gitflow/GitFlowWorkflowNoFork.svg">Original SVG file</a>. Created in Inkscape.</p>
+<p><span class="label label-info">The key points are:</span></p>
+<ul>
+<li>Don’t fork repos on GitHub - clone the master repo directly</li>
+
+<li>Push feature branches back to origin repo so others can collaborate</li>
+
+<li>Use the GitHub website to create pull requests from feature branches</li>
+
+<li>Don’t accept your own pull requests!</li>
+</ul>
+
+<h2 id="1_cloning_a_repo">1. Cloning A Repo</h2>
+
+<p>Clone the existing repo from GitHub to your local workstation:</p>
+<div class="highlight"><pre><code class="bash">git clone git@github.com:##orgname##/##reponame##
+</code></pre></div><p><span class="label label-important">Please remember:</span></p>
+<ul>
+<li>Do not fork the repo on GitHub - clone the master repo directly.</li>
+</ul>
+
+<h2 id="2_initialise_the_hubflow_tools">2. Initialise The HubFlow Tools</h2>
+
+<p>The HubFlow tools need to be initialised before they can be used:</p>
+<div class="highlight"><pre><code class="bash"><span class="nb">cd</span> <span class="c">##reponame##</span>
+git hf init
+</code></pre></div><p><span class="label label-important">Please remember:</span></p>
+<ul>
+<li>You have to do this every time you clone a repo.</li>
+</ul>
+
+<h2 id="3_create_a_feature_branch">3. Create A Feature Branch</h2>
+
+<p>If you are creating a new feature branch, do this:</p>
+<div class="highlight"><pre><code class="bash">git hf feature start <span class="c">##feature-name##</span>
+</code></pre></div>
+<p>If you are starting to work on an existing feature branch, do this:</p>
+<div class="highlight"><pre><code class="bash">git hf feature checkout <span class="c">##feature-name##</span>
+</code></pre></div><p><span class="label label-important">Please remember:</span></p>
+<ul>
+<li>All new work (new features, non-emergency bug fixes) <strong>must</strong> be done in a new feature branch.</li>
+
+<li>Give your feature branches sensible names. If you’re working on a ticket, use the ticket number as the feature branch name (e.g. ticket-1234).</li>
+
+<li>If the feature branch already exists on the master repo, this command will fail with an error.</li>
+</ul>
+
+<h2 id="4_publish_the_feature_branch_on_github">4. Publish The Feature Branch On GitHub</h2>
+
+<p>Push your feature branch back to GitHub as you make progress on your changes:</p>
+<div class="highlight"><pre><code class="bash">git hf push
+</code></pre></div>
+<h2 id="5_keep_up_to_date">5. Keep Up To Date</h2>
+
+<p>You’ll need to bring down completed features &amp; hotfixes from other developers, and merge them into your feature branch regularly. (Once a day, first thing in the morning, is a good rule of thumb).</p>
+<div class="highlight"><pre><code class="bash"><span class="c"># if you're not on your feature branch</span>
+git hf feature checkout <span class="c">##feature-name##</span>
+
+<span class="c"># pull down master and develop branches</span>
+git hf update
+
+<span class="c"># merge develop into your feature branch</span>
+git merge develop
+</code></pre></div>
+<h2 id="6_collaborate_with_others">6. Collaborate With Others</h2>
+
+<p>Push your feature branch back to GitHub whenever you need to share your changes with colleagues:</p>
+<div class="highlight"><pre><code class="bash">git hf push
+</code></pre></div>
+<p>Pull your colleague’s changes back to your local clone:</p>
+<div class="highlight"><pre><code class="bash">git hf pull
+</code></pre></div>
+<h2 id="7_merge_your_feature_into_develop_branch">7. Merge Your Feature Into Develop Branch</h2>
+<div class="highlight"><pre><code class="bash">git hf push
+</code></pre></div>
+<p>Then, use the GitHub website to create a pull request to ##reponame##/develop branch from ##reponame##/feature/##feature-name##.</p>
+
+<p><img alt="Pull Request" src="./Using GitFlow With GitHub_files/PullRequest1.png"></p>
+
+<p><img alt="Pull Request" src="./Using GitFlow With GitHub_files/PullRequest2.png"></p>
+
+<p><img alt="Pull Request" src="./Using GitFlow With GitHub_files/PullRequest3.png"></p>
+
+<p><img alt="Pull Request" src="./Using GitFlow With GitHub_files/PullRequest4.png"></p>
+
+<p><img alt="Pull Request" src="./Using GitFlow With GitHub_files/PullRequest5.png"></p>
+
+<p>Ask a colleague to review your pull-request; don’t accept it yourself unless you have to. Once the pull request has been accepted, close your feature using the HubFlow tools:</p>
+<div class="highlight"><pre><code class="bash">git hf feature finish
+</code></pre></div>
+<h2 id="8_creating_releases">8. Creating Releases</h2>
+
+<p>When you have enough completed features, create a release branch:</p>
+<div class="highlight"><pre><code class="bash">git hf update
+git hf release start <span class="c">##version-number##</span>
+</code></pre></div>
+<p>Release branches are given version numbers for name. For example:</p>
+<div class="highlight"><pre><code class="bash">git hf release start 2.6.0
+</code></pre></div>
+<p>creates the branch <strong>release/2.6.0</strong>.</p>
+
+<p>Once you’ve created the release branch, <strong>remember to update the version number in your code</strong> (in the pom.xml, Makefile, build.xml or wherever it is stored).</p>
+
+<p>Build the code, deploy it into test environments, find bugs. Fix the bugs directly inside the release branch. Keep building, deploying, debugging, fixing until you’re happy that the release is ready.</p>
+
+<p>When you’re ready to tag the release and merge it back into master and develop branches, do this:</p>
+<div class="highlight"><pre><code class="bash">git hf release finish <span class="c">##version-number##</span>
+</code></pre></div>
+<p>This closes the release branch and creates a tag called <strong>##version-number##</strong> against the <strong>master branch</strong>.</p>
+
+<h2 id="9_creating_hotfixes">9. Creating Hotfixes</h2>
+
+<p>A hotfix (not shown on the diagram at the top of this page) is a special kind of release. Unlike features and releases (which are branched from <strong>develop</strong>), hotfixes are branched from <strong>master</strong>. Use hotfixes when you want to make and release an urgent change to your latest released code, and you don’t want the changes currently in <strong>develop</strong> to ship yet.</p>
+
+<p>To create a new hotfix:</p>
+<div class="highlight"><pre><code class="bash">git hf update
+git hf hotfix start <span class="c">##version-number##</span>
+</code></pre></div>
+<p>This creates a new branch called <strong>hotfix/##version-number##</strong>, off of the latest <strong>master</strong> branch.</p>
+
+<p>Once you’ve created the hotfix branch, <strong>remember to update the version number in your code</strong> (in the pom.xml, Makefile, build.xml or wherever it is stored).</p>
+
+<p>Edit the code, build it, deploy it into test environments, make sure that your hotfix works. Keep editing, building, deploying, debugging and fixing until you’re happy that the hotfix is ready. Remember that you can use the <em>git merge</em> command if you need to merge changes from a feature branch into the hotfix that you are preparing.</p>
+
+<p>When you’re ready to tag the hotfix and merge it back into master and develop branches, do this:</p>
+<div class="highlight"><pre><code class="bash">git hf hotfix finish <span class="c">##version-number##</span>
+</code></pre></div>
+<p>This closes the hotfix branch and creates a tag called <strong>##version-number##</strong> against the <strong>master branch</strong>.</p>
+<p><span class="label label-important">Be careful with hotfixes:</span></p>
+<p>You can use <em>git hf hotfix start ##version-number## ##older-tag##</em> to create a hotfix off of an older tag. However, if you look back at <a href="http://nvie.com/img/2009/12/Screen-shot-2009-12-24-at-11.32.03.png">Vincent’s original diagram</a>, notice how changes happen in <strong>time</strong> order. When you finish this kind of hotfix, it gets merged back into the latest <strong>master</strong> branch; it does not get merged into just after the tag that you branched off. This can cause problems, such as <strong>master</strong> ending up with the wrong version number, which you will have to spot and fix by hand for now.</p>
+
+            <!-- facebook likes -->
+            <div class="facebook-likes hidden-phone">
+              <fb:like send="true" width="640" show_faces="false" fb-xfbml-state="rendered" class="fb_edge_widget_with_comment fb_iframe_widget"><span style="height: 20px; width: 640px;"><iframe id="f12a4b79a" name="f1c17b6cc8" scrolling="no" title="Like this content on Facebook." class="fb_ltr" src="./Using GitFlow With GitHub_files/like.html" style="border: none; overflow: hidden; height: 20px; width: 640px;"></iframe></span></fb:like>
+            </div>
+
+            <div class="facebook-likes visible-phone">
+              <fb:like send="true" width="300" show_faces="false" fb-xfbml-state="rendered" class="fb_edge_widget_with_comment fb_iframe_widget"><span style="height: 28px; width: 300px;"><iframe id="f20b0b082c" name="f24c36517c" scrolling="no" title="Like this content on Facebook." class="fb_ltr" src="./Using GitFlow With GitHub_files/like(1).html" style="border: none; overflow: hidden; height: 28px; width: 300px;"></iframe></span></fb:like>
+            </div>
+
+            <!-- middle nextbar -->
+            <div class="nextbar nextbar-middle">
+              <ul class="nav nav-pills">
+                <li class="prev"><a href="http://datasift.github.io/gitflow/TheHubFlowTools.html">Prev: HubFlow: The GitFlow Tools Adapted For GitHub</a></li>
+                <li class="next"><a href="http://datasift.github.io/gitflow/Versioning.html">Next: Versioning</a></li>
+              </ul>
+            </div>
+
+            <!-- facebook comments -->
+            <div class="visible-desktop">
+              <div class="well">
+                <h2>Reader Comments And Feedback</h2>
+                <div class="fb-comments hidden-phone fb_iframe_widget" data-href="http://datasift.github.com/gitflow/GitFlowForGitHub.html" data-num-posts="5" data-width="640" mobile="false" fb-xfbml-state="rendered"><span style="height: 1252px; width: 640px;"><iframe id="f1871661ac" name="f3188f21f4" scrolling="no" title="Facebook Social Plugin" class="fb_ltr" src="./Using GitFlow With GitHub_files/comments(2).html" style="border: none; overflow: hidden; height: 1252px; width: 640px;"></iframe></span></div>
+              </div>
+            </div>
+            <div class="visible-tablet">
+              <div class="well">
+                <h2>Reader Comments And Feedback</h2>
+                <div class="fb-comments hidden-phone fb_iframe_widget" data-href="http://datasift.github.com/gitflow/GitFlowForGitHub.html" data-num-posts="5" data-width="500" mobile="false" fb-xfbml-state="rendered"><span style="height: 3464px; width: 500px;"><iframe id="f2f6b8d708" name="fad89a138" scrolling="no" title="Facebook Social Plugin" class="fb_ltr" src="./Using GitFlow With GitHub_files/comments(1).html" style="border: none; overflow: hidden; height: 3464px; width: 500px;"></iframe></span></div>
+              </div>
+            </div>
+            <div class="visible-phone">
+              <div class="100%">
+                <h2>Reader Comments And Feedback</h2>
+                <div class="fb-comments visible-phone fb_iframe_widget" data-href="http://datasift.github.com/gitflow/GitFlowForGitHub.html" data-num-posts="5" data-width="300" fb-xfbml-state="rendered"><span style="height: 3464px; width: 300px;"><iframe id="f11d41162" name="f3bbcf62b4" scrolling="no" title="Facebook Social Plugin" class="fb_ltr" src="./Using GitFlow With GitHub_files/comments.html" style="border: none; overflow: hidden; height: 3464px; width: 300px;"></iframe></span></div>
+              </div>
+            </div>
+
+            <div class="nextbar nextbar-bottom">
+              <ul class="nav nav-pills">
+                <li class="prev"><a href="http://datasift.github.io/gitflow/TheHubFlowTools.html">Prev: HubFlow: The GitFlow Tools Adapted For GitHub</a></li>
+                <li class="next"><a href="http://datasift.github.io/gitflow/Versioning.html">Next: Versioning</a></li>
+              </ul>
+            </div>
+          </div> <!-- close body (main content area) -->
+        </div>
+      </div> <!-- close fluid-row -->
+    </div> <!-- close fluid container -->
+  
+</body></html>
