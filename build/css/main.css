@@ -1,360 +1,195 @@
-/* *****************************
-main.sass
-
-Rain CSS Coding Standards outlined at http://standards.mediarain.com/html-css
-
-Project: therebelrobot
-    
-****************************** */
-/* ******************************
-
-tRRtoolbelt.less
-
-handy LESS-CSS mixins and functions for common actions
-
-Dependencies:
-	LESScss
-	
-Developed by Trent Oswald <trentoswald@therebelrobot.com>
-
-For available functions, search (<ctrl>+f) for @FUNCTIONS
-
-****************************** */
-/*==================================
-=            @COLORS            =
-==================================*/
-/*==================================
-=            @FONTS            =
-==================================*/
-/*serif*/
-/*sans-serif*/
-/*monospace*/
-/*==================================
-=            @FUNCTIONS            =
-==================================*/
-/**
-	These functions are utilizing namespacing. They are called as the following:
-		#tRRt > #reset > .meyer; - for meyer reset css
-		#tRRt > #rounded > .all(5px) - for a 5px rounded corner
-
-		#tRRt > #functions > #ratio outputs a new variable, either @rw or @rh, standing for ratio-calculated-width and ration-calculated-height.
-		This allows you to use the new value wherever needed.
-
-	If you would like additional functions added, feel free to fork and make a pull request on github.
-**/
-/* Eric Meyer's Reset CSS v2.0 - http://cssreset.com */
 html,
-body,
-div,
-span,
-applet,
-object,
-iframe,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-p,
-blockquote,
-pre,
-a,
-abbr,
-acronym,
-address,
-big,
-cite,
-code,
-del,
-dfn,
-em,
-img,
-ins,
-kbd,
-q,
-s,
-samp,
-small,
-strike,
-strong,
-sub,
-sup,
-tt,
-var,
-b,
-u,
-i,
-center,
-dl,
-dt,
-dd,
-ol,
-ul,
-li,
-fieldset,
-form,
-label,
-legend,
-table,
-caption,
-tbody,
-tfoot,
-thead,
-tr,
-th,
-td,
-article,
-aside,
-canvas,
-details,
-embed,
-figure,
-figcaption,
-footer,
-header,
-hgroup,
-menu,
-nav,
-output,
-ruby,
-section,
-summary,
-time,
-mark,
-audio,
-video {
-  border: 0;
-  font-size: 100%;
-  font: inherit;
-  vertical-align: baseline;
-  margin: 0;
-  padding: 0;
-}
-article,
-aside,
-details,
-figcaption,
-figure,
-footer,
-header,
-hgroup,
-menu,
-nav,
-section {
-  display: block;
-}
 body {
-  line-height: 1;
+  height: 100%;
 }
-ol,
-ul {
-  list-style: none;
+.page {
+  padding-left: 0;
+  min-height: 100%;
 }
-blockquote,
-q {
-  quotes: none;
+@media (min-width: 980px) {
+  .sidebar {
+    min-height: 100%;
+    margin-left: 0;
+    margin-top: 20px;
+    padding-top: 40px;
+    margin-right: 0;
+    margin-bottom: 40px;
+  }
+  .sidebar .sidebody {
+    padding-left: 0px;
+    padding-right: 10px;
+  }
+  .container-fluid .maincontent {
+    margin-top: 20px;
+    padding-top: 40px;
+    padding-right: 1.93%;
+    min-height: 100%;
+  }
 }
-blockquote:before,
-blockquote:after,
-q:before,
-q:after {
-  content: none;
+.body .maincontent {
+  border-top: #bbb solid 1px;
+  padding-top: 20px;
 }
-table {
-  border-collapse: collapse;
-  border-spacing: 0;
+.maincontent h1 {
+  border-bottom: #bbb solid 1px;
 }
-/** Vanilla CSS 1.0.2 - http://cssreset.com */
-body {
-  font: 9pt/1.5em sans-serif;
+.maincontent h2 {
+  padding-top: 20px;
+  padding-bottom: 10px;
 }
-pre,
-code,
-tt {
-  font: 1em/1.5em 'Andale Mono', 'Lucida Console', monospace;
+.well h2 {
+  padding-top: 0px;
 }
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-b,
-strong {
-  font-weight: bold;
+.maincontent blockquote p {
+  font-size: 13px;
+  line-height: 1.2;
+  padding-bottom: 5px;
 }
-em,
-i,
-dfn {
-  font-style: italic;
+.maincontent p.alert {
+  margin-top: 15px;
 }
-dfn {
-  font-weight: bold;
+.maincontent legend {
+  margin-bottom: 10px;
 }
-p,
-code,
-pre,
-kbd {
-  margin: 0 0 1.5em 0;
+.maincontent .hornet-form-actions {
+  padding-top: 5px;
+  padding-bottom: 5px;
+  text-align: right;
 }
-blockquote {
-  margin: 0 1.5em 1.5em 1.5em;
-}
-cite {
-  font-style: italic;
-}
-li ul,
-li ol {
-  margin: 0 1.5em;
-}
-ul,
-ol {
-  margin: 0 1.5em 1.5em 1.5em;
-}
-ul {
-  list-style-type: disc;
-}
-ol {
-  list-style-type: decimal;
-}
-ol ol {
-  list-style: upper-alpha;
-}
-ol ol ol {
-  list-style: lower-roman;
-}
-ol ol ol ol {
-  list-style: lower-alpha;
-}
-dl {
-  margin: 0 0 1.5em 0;
-}
-dl dt {
-  font-weight: bold;
-}
-dd {
-  margin-left: 1.5em;
-}
-table {
-  margin-bottom: 1.4em;
-  width: 100%;
-}
-th {
-  font-weight: bold;
-}
-th,
-td,
-caption {
-  padding: 4px 10px 4px 5px;
-}
-tfoot {
-  font-style: italic;
-}
-sup,
-sub {
-  line-height: 0;
-}
-abbr,
-acronym {
-  border-bottom: 1px dotted;
-}
-address {
-  margin: 0 0 1.5em;
-  font-style: italic;
-}
-del {
-  text-decoration: line-through;
-}
-pre {
-  margin: 1.5em 0;
-  white-space: pre;
-}
-img.centered,
-.aligncenter,
-div.aligncenter {
+.maincontent .panel {
   display: block;
-  margin-left: auto;
-  margin-right: auto;
+  padding: 9px;
+  line-height: 1px;
+  border: 1px solid #ddd;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+  -webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.45);
+  -moz-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.45);
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.45);
+  margin-bottom: 10px;
 }
-img.alignright {
-  display: inline;
-}
-img.alignleft {
-  display: inline;
-}
-.alignright {
-  float: right;
-  margin-left: 10px;
-}
-.alignleft {
-  float: left;
-  margin-right: 10px;
-}
-img {
+.maincontent .panel h3 {
   max-width: 100%;
+  border-bottom: 1px solid #ddd;
+  margin-bottom: 10px;
 }
-* html .clearfix {
-  height: 1%;
+.maincontent .alert {
+  -webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.25);
+  -moz-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.25);
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.25);
 }
-* + html .clearfix {
-  display: inline-block;
+.maincontent .well {
+  margin-top: 20px;
 }
-.clearfix:after {
-  content: ".";
-  display: block;
-  height: 0;
-  clear: both;
-  visibility: hidden;
+code {
+  padding: 1px 2px;
 }
-* html .group {
-  height: 1%;
+.popover-inner {
+  width: 320px;
 }
-* + html .group {
-  display: inline-block;
+h3.popover-title {
+  white-space: nowrap;
+  padding-right: 20px;
 }
-.group:after {
-  content: ".";
-  display: block;
-  height: 0;
-  clear: both;
-  visibility: hidden;
+.popover-content p {
+  padding-bottom: 5px;
+  line-height: 18px;
 }
-/*
-
-@font-face {
-  font-family: '';
-  src: url('');
-  src: url('?#iefix') format('embedded-opentype'),
-  url('') format('woff'),
-  url('') format('truetype'),
-  url('#') format('svg');
-  font-weight: normal;
-  font-style: normal;
+.popover-content p:last-child {
+  padding-bottom: 0;
 }
-
-@font-face {
-  font-family: '';
-  src: url('');
-  src: url('?#iefix') format('embedded-opentype'),
-  url('') format('woff'),
-  url('') format('truetype'),
-  url('#') format('svg');
-  font-weight: bold;
-  font-style: normal;
+.error-page h1 {
+  color: #000;
 }
-
-*/
-/* App specific colors for therebelrobot */
-/*Whites/Grays/Blacks*/
-/*Browns*/
-/*Reds*/
-/*Oranges*/
-/*Yellows*/
-/*Greens*/
-/*Blues*/
-/*Purples*/
-/* Directive Specific Styling */
-/* Directive Styling for therebelrobot */
-/* Individual Sections */
-/* App States for therebelrobot */
+img.panel {
+  display: inline;
+  float: left;
+}
+.facebook-likes {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+.nextbar {
+  width: 100%;
+  background-color: #eeeeee;
+  /* Old browsers */
+  background-repeat: repeat-x;
+  /* Repeat the gradient */
+  background-image: -moz-linear-gradient(top, #f5f5f5 0%, #eeeeee 100%);
+  /* FF3.6+ */
+  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #f5f5f5), color-stop(100%, #eeeeee));
+  /* Chrome,Safari4+ */
+  background-image: -webkit-linear-gradient(top, #f5f5f5 0%, #eeeeee 100%);
+  /* Chrome 10+,Safari 5.1+ */
+  background-image: -ms-linear-gradient(top, #f5f5f5 0%, #eeeeee 100%);
+  /* IE10+ */
+  background-image: -o-linear-gradient(top, #f5f5f5 0%, #eeeeee 100%);
+  /* Opera 11.10+ */
+  background-image: linear-gradient(top, #f5f5f5 0%, #eeeeee 100%);
+  /* W3C */
+  border: 1px solid #e5e5e5;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+  overflow: auto;
+}
+.nextbar .nav {
+  margin-bottom: 0;
+}
+.nextbar .nav > li > a {
+  margin: 0;
+  padding-top: 11px;
+  padding-bottom: 11px;
+  border-left: 1px solid #f5f5f5;
+  border-right: 1px solid #e5e5e5;
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  border-radius: 0;
+}
+.nextbar .nav > .active > a,
+.nextbar .nav > .active > a:hover {
+  padding-left: 13px;
+  color: #777;
+  background-color: #e9e9e9;
+  border-right-color: #ddd;
+  border-left: 0;
+  -webkit-box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.05);
+  -moz-box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.05);
+  box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.05);
+}
+.nextbar .nav > .active > a .caret,
+.nextbar .nav > .active > a:hover .caret {
+  border-top-color: #777;
+}
+.nextbar .nav > li:first-child > a,
+.nextbar .nav > li:first-child > a:hover {
+  border-left: 0;
+  padding-left: 12px;
+  -webkit-border-radius: 4px 0 0 4px;
+  -moz-border-radius: 4px 0 0 4px;
+  border-radius: 4px 0 0 4px;
+}
+.nextbar .nav > li:last-child > a {
+  border-right: 0;
+}
+.nextbar .dropdown-menu {
+  -webkit-border-radius: 0 0 4px 4px;
+  -moz-border-radius: 0 0 4px 4px;
+  border-radius: 0 0 4px 4px;
+}
+.nextbar li.prev {
+  width: 50%;
+}
+.nextbar li.next {
+  float: right;
+  text-align: right;
+  width: 50%;
+}
+.nextbar-top {
+  margin-bottom: 20px;
+}
+.nextbar-bottom {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}

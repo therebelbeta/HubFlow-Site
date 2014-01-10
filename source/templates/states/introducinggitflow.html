@@ -14,7 +14,7 @@
 
     <p><a href="http://nvie.com/posts/a-successful-git-branching-model/">GitFlow</a> is a branching model for Git, created by Vincent Driessen. It has attracted a lot of attention because it is very well suited to collaboration and scaling the development team.</p>
 
-    <p><img alt="GitFlow" src="./Introducing GitFlow_files/Screen-shot-2009-12-24-at-11.32.03.png"></p>
+    <p><img alt="GitFlow" src="img/Screen-shot-2009-12-24-at-11.32.03.png"></p>
 
     <h2 id="key_benefits">Key Benefits</h2>
 
@@ -40,66 +40,30 @@
 
     <p>New development (new features, non-emergency bug fixes) are built in <strong>feature branches</strong>:</p>
 
-    <p><img alt="GitFlow feature branches" src="./Introducing GitFlow_files/GitFlowFeatureBranches.png"></p>
+    <p><img alt="GitFlow feature branches" src="img/GitFlowFeatureBranches.png"></p>
 
     <p>Feature branches are branched off of the <strong>develop branch</strong>, and finished features and fixes are merged back into the <strong>develop branch</strong> when they’re ready for release:</p>
 
-    <p><img alt="GitFlow develop branch" src="./Introducing GitFlow_files/GitFlowDevelopBranch.png"></p>
+    <p><img alt="GitFlow develop branch" src="img/GitFlowDevelopBranch.png"></p>
 
     <p>When it is time to make a release, a <strong>release branch</strong> is created off of <strong>develop</strong>:</p>
 
-    <p><img alt="GitFlow release branch" src="./Introducing GitFlow_files/GitFlowReleaseBranch.png"></p>
+    <p><img alt="GitFlow release branch" src="img/GitFlowReleaseBranch.png"></p>
 
     <p>The code in the <strong>release branch</strong> is deployed onto a suitable test environment, tested, and any problems are fixed directly in the release branch. This <strong>deploy -&gt; test -&gt; fix -&gt; redeploy -&gt; retest</strong> cycle continues until you’re happy that the release is good enough to release to customers.</p>
 
     <p>When the release is finished, the <strong>release branch</strong> is merged into <strong>master</strong> <strong>and</strong> into <strong>develop</strong> too, to make sure that any changes made in the <strong>release branch</strong> aren’t accidentally lost by new development.</p>
 
-    <p><img alt="GitFlow master branch" src="./Introducing GitFlow_files/GitFlowMasterBranch.png"></p>
+    <p><img alt="GitFlow master branch" src="img/GitFlowMasterBranch.png"></p>
 
     <p>The <strong>master branch</strong> tracks released code only. The only commits to <strong>master</strong> are merges from <strong>release branches</strong> and <strong>hotfix branches</strong>.</p>
 
     <p><strong>Hotfix branches</strong> are used to create emergency fixes:</p>
 
-    <p><img alt="GitFlow hotfix branch" src="./Introducing GitFlow_files/GitFlowHotfixBranch.png"></p>
+    <p><img alt="GitFlow hotfix branch" src="img/GitFlowHotfixBranch.png"></p>
 
     <p>They are branched directly from a tagged release in the <strong>master branch</strong>, and when finished are merged back into both <strong>master</strong> and <strong>develop</strong> to make sure that the hotfix isn’t accidentally lost when the next regular release occurs.</p>
 
-    <!-- facebook likes -->
-    <div class="facebook-likes hidden-phone">
-      <fb:like send="true" width="640" show_faces="false" fb-xfbml-state="rendered" class="fb_edge_widget_with_comment fb_iframe_widget"><span style="height: 20px; width: 640px;"><iframe id="f6f517f8" name="f228e0080" scrolling="no" title="Like this content on Facebook." class="fb_ltr" src="./Introducing GitFlow_files/like.html" style="border: none; overflow: hidden; height: 20px; width: 640px;"></iframe></span></fb:like>
-    </div>
-
-    <div class="facebook-likes visible-phone">
-      <fb:like send="true" width="300" show_faces="false" fb-xfbml-state="rendered" class="fb_edge_widget_with_comment fb_iframe_widget"><span style="height: 28px; width: 300px;"><iframe id="f2e0000a48" name="f354fde98c" scrolling="no" title="Like this content on Facebook." class="fb_ltr" src="./Introducing GitFlow_files/like(1).html" style="border: none; overflow: hidden; height: 28px; width: 300px;"></iframe></span></fb:like>
-    </div>
-
-    <!-- middle nextbar -->
-    <div class="nextbar nextbar-middle">
-      <ul class="nav nav-pills">
-        <li class="prev"><a href="#/">Prev: HubFlow: GitFlow For GitHub</a></li>
-        <li class="next"><a href="#/hubflow">Next: HubFlow: The GitFlow Tools Adapted For GitHub</a></li>
-      </ul>
-    </div>
-
-    <!-- facebook comments -->
-    <div class="visible-desktop">
-      <div class="well">
-        <h2>Reader Comments And Feedback</h2>
-        <div class="fb-comments hidden-phone fb_iframe_widget" data-href="http://datasift.github.com/gitflow/IntroducingGitFlow.html" data-num-posts="5" data-width="640" mobile="false" fb-xfbml-state="rendered"><span style="height: 1433px; width: 640px;"><iframe id="f30e61081c" name="f51ae3c54" scrolling="no" title="Facebook Social Plugin" class="fb_ltr" src="./Introducing GitFlow_files/comments(1).html" style="border: none; overflow: hidden; height: 1433px; width: 640px;"></iframe></span></div>
-      </div>
-    </div>
-    <div class="visible-tablet">
-      <div class="well">
-        <h2>Reader Comments And Feedback</h2>
-        <div class="fb-comments hidden-phone fb_iframe_widget" data-href="http://datasift.github.com/gitflow/IntroducingGitFlow.html" data-num-posts="5" data-width="500" mobile="false" fb-xfbml-state="rendered"><span style="height: 4092px; width: 500px;"><iframe id="f37b6ff1a4" name="fd13248c4" scrolling="no" title="Facebook Social Plugin" class="fb_ltr" src="./Introducing GitFlow_files/comments(2).html" style="border: none; overflow: hidden; height: 4092px; width: 500px;"></iframe></span></div>
-      </div>
-    </div>
-    <div class="visible-phone">
-      <div class="100%">
-        <h2>Reader Comments And Feedback</h2>
-        <div class="fb-comments visible-phone fb_iframe_widget" data-href="http://datasift.github.com/gitflow/IntroducingGitFlow.html" data-num-posts="5" data-width="300" fb-xfbml-state="rendered"><span style="height: 4092px; width: 300px;"><iframe id="f12bf2701" name="f37c9e8dbc" scrolling="no" title="Facebook Social Plugin" class="fb_ltr" src="./Introducing GitFlow_files/comments.html" style="border: none; overflow: hidden; height: 4092px; width: 300px;"></iframe></span></div>
-      </div>
-    </div>
 
     <div class="nextbar nextbar-bottom">
       <ul class="nav nav-pills">

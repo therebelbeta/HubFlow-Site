@@ -35,9 +35,6 @@ gulp.task('scripts', function() {
     .pipe(concat("lib.js"))
     .pipe(gulp.dest('build/js'));
 
-  gulp.src(['source/lib/**/*.css'])
-    .pipe(concat("lib.css"))
-    .pipe(gulp.dest('build/css/lib'));
 });
 
 gulp.task('less', function () {

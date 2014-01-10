@@ -39,7 +39,7 @@
 
     <h2 id="the_poster">The Poster</h2>
 
-    <p><img alt="GitFlow For GitHub" src="./Using GitFlow With GitHub_files/GitFlowWorkflowNoFork.png"></p>
+    <p><img alt="GitFlow For GitHub" src="img/GitFlowWorkflowNoFork.png"></p>
 
     <p><a href="http://datasift.github.io/gitflow/GitFlowWorkflowNoFork.svg">Original SVG file</a>. Created in Inkscape.</p>
     <p><span class="label label-info">The key points are:</span></p>
@@ -118,15 +118,15 @@
     </code></pre></div>
     <p>Then, use the GitHub website to create a pull request to ##reponame##/develop branch from ##reponame##/feature/##feature-name##.</p>
 
-    <p><img alt="Pull Request" src="./Using GitFlow With GitHub_files/PullRequest1.png"></p>
+    <p><img alt="Pull Request" src="img/PullRequest1.png"></p>
 
-    <p><img alt="Pull Request" src="./Using GitFlow With GitHub_files/PullRequest2.png"></p>
+    <p><img alt="Pull Request" src="img/PullRequest2.png"></p>
 
-    <p><img alt="Pull Request" src="./Using GitFlow With GitHub_files/PullRequest3.png"></p>
+    <p><img alt="Pull Request" src="img/PullRequest3.png"></p>
 
-    <p><img alt="Pull Request" src="./Using GitFlow With GitHub_files/PullRequest4.png"></p>
+    <p><img alt="Pull Request" src="img/PullRequest4.png"></p>
 
-    <p><img alt="Pull Request" src="./Using GitFlow With GitHub_files/PullRequest5.png"></p>
+    <p><img alt="Pull Request" src="img/PullRequest5.png"></p>
 
     <p>Ask a colleague to review your pull-request; don’t accept it yourself unless you have to. Once the pull request has been accepted, close your feature using the HubFlow tools:</p>
     <div class="highlight"><pre><code class="bash">git hf feature finish
@@ -172,42 +172,7 @@
     <p><span class="label label-important">Be careful with hotfixes:</span></p>
     <p>You can use <em>git hf hotfix start ##version-number## ##older-tag##</em> to create a hotfix off of an older tag. However, if you look back at <a href="http://nvie.com/img/2009/12/Screen-shot-2009-12-24-at-11.32.03.png">Vincent’s original diagram</a>, notice how changes happen in <strong>time</strong> order. When you finish this kind of hotfix, it gets merged back into the latest <strong>master</strong> branch; it does not get merged into just after the tag that you branched off. This can cause problems, such as <strong>master</strong> ending up with the wrong version number, which you will have to spot and fix by hand for now.</p>
 
-    <!-- facebook likes -->
-    <div class="facebook-likes hidden-phone">
-      <fb:like send="true" width="640" show_faces="false" fb-xfbml-state="rendered" class="fb_edge_widget_with_comment fb_iframe_widget"><span style="height: 20px; width: 640px;"><iframe id="f12a4b79a" name="f1c17b6cc8" scrolling="no" title="Like this content on Facebook." class="fb_ltr" src="./Using GitFlow With GitHub_files/like.html" style="border: none; overflow: hidden; height: 20px; width: 640px;"></iframe></span></fb:like>
-    </div>
-
-    <div class="facebook-likes visible-phone">
-      <fb:like send="true" width="300" show_faces="false" fb-xfbml-state="rendered" class="fb_edge_widget_with_comment fb_iframe_widget"><span style="height: 28px; width: 300px;"><iframe id="f20b0b082c" name="f24c36517c" scrolling="no" title="Like this content on Facebook." class="fb_ltr" src="./Using GitFlow With GitHub_files/like(1).html" style="border: none; overflow: hidden; height: 28px; width: 300px;"></iframe></span></fb:like>
-    </div>
-
-    <!-- middle nextbar -->
-    <div class="nextbar nextbar-middle">
-      <ul class="nav nav-pills">
-        <li class="prev"><a href="#/hubflow">Prev: HubFlow: The GitFlow Tools Adapted For GitHub</a></li>
-        <li class="next"><a href="#/versioning">Next: Versioning</a></li>
-      </ul>
-    </div>
-
-    <!-- facebook comments -->
-    <div class="visible-desktop">
-      <div class="well">
-        <h2>Reader Comments And Feedback</h2>
-        <div class="fb-comments hidden-phone fb_iframe_widget" data-href="http://datasift.github.com/gitflow/GitFlowForGitHub.html" data-num-posts="5" data-width="640" mobile="false" fb-xfbml-state="rendered"><span style="height: 1252px; width: 640px;"><iframe id="f1871661ac" name="f3188f21f4" scrolling="no" title="Facebook Social Plugin" class="fb_ltr" src="./Using GitFlow With GitHub_files/comments(2).html" style="border: none; overflow: hidden; height: 1252px; width: 640px;"></iframe></span></div>
-      </div>
-    </div>
-    <div class="visible-tablet">
-      <div class="well">
-        <h2>Reader Comments And Feedback</h2>
-        <div class="fb-comments hidden-phone fb_iframe_widget" data-href="http://datasift.github.com/gitflow/GitFlowForGitHub.html" data-num-posts="5" data-width="500" mobile="false" fb-xfbml-state="rendered"><span style="height: 3464px; width: 500px;"><iframe id="f2f6b8d708" name="fad89a138" scrolling="no" title="Facebook Social Plugin" class="fb_ltr" src="./Using GitFlow With GitHub_files/comments(1).html" style="border: none; overflow: hidden; height: 3464px; width: 500px;"></iframe></span></div>
-      </div>
-    </div>
-    <div class="visible-phone">
-      <div class="100%">
-        <h2>Reader Comments And Feedback</h2>
-        <div class="fb-comments visible-phone fb_iframe_widget" data-href="http://datasift.github.com/gitflow/GitFlowForGitHub.html" data-num-posts="5" data-width="300" fb-xfbml-state="rendered"><span style="height: 3464px; width: 300px;"><iframe id="f11d41162" name="f3bbcf62b4" scrolling="no" title="Facebook Social Plugin" class="fb_ltr" src="./Using GitFlow With GitHub_files/comments.html" style="border: none; overflow: hidden; height: 3464px; width: 300px;"></iframe></span></div>
-      </div>
-    </div>
+   
 
     <div class="nextbar nextbar-bottom">
       <ul class="nav nav-pills">
@@ -216,4 +181,3 @@
       </ul>
     </div>
   </div> <!-- close body (main content area) -->
-  
