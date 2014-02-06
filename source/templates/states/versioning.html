@@ -23,13 +23,15 @@
   <p><a href="http://semver.org/">Semantic versioning</a> is a very simple scheme built around the <strong>X.Y.Z-buildNo</strong> concept (for example <strong>2.6.0-2</strong> or <strong>2.6.0-SNAPSHOT20120501</strong>):</p>
 
   <ul>
-    <li>Increment <strong>Z</strong> when you fix something</li>
 
-    <li>Increment <strong>Y</strong> when you add a new feature</li>
+    <li>Increment <strong>X</strong> when you break backwards-compatibility or add major features. (<strong>Major Releases</strong>)</li>
 
-    <li>Increment <strong>X</strong> when you break backwards-compatibility or add major features</li>
+    <li>Increment <strong>Y</strong> when you add a new feature. (<strong>Minor Releases</strong>)</li>
+
+    <li>Increment <strong>Z</strong> when you fix something. (<strong>Bugfix Releases</strong>)</li>
 
     <li>Use the <strong>buildNo</strong> to differentiate different builds off the same branch, and to differentiate between development, test and production builds.</li>
+
   </ul>
   <h3 id="possible_application_for_agency_work">Possible Application for Agency Work</h3>
 
@@ -40,7 +42,10 @@
 
     <li><strong>Minor Releases</strong> can refer to the majority of major functionality added to the application.</li>
 
-    <li><strong>Other Releases</strong> can refer to the bugfixes and hotfixes made to correct an issue, rather than add functionailty.</li>
+    <li><strong>Bugfix Releases</strong> can refer to the bugfixes and hotfixes made to correct an issue, rather than add functionailty.</li>
+
+    <li><strong>buildNo</strong> can refer be a date or a random number, incrememnted or changed anytime a build is run (nightlies or Jenkins builds, etc.).</li>
+
   </ul>
 
   <h2 id="version_numbers_and_gitflow_branches">Version Numbers And GitFlow Branches</h2>
