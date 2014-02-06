@@ -16,7 +16,7 @@
 
   <p>One of the topics that the <a href="http://nvie.com/posts/a-successful-git-branching-model/">original GitFlow article</a> doesn’t address at all is what scheme to adopt for your software’s version numbers.</p>
 
-  <p>But we believe that life is easier for <strong>everyone</strong> if version numbers <strong>mean the same thing</strong> to everyone who is working on a piece of software.</p>
+  <p>But life is easier for <strong>everyone</strong> if version numbers <strong>mean the same thing</strong> to everyone who is working on a piece of software. QA can use these version numbers when reporting bugs and issues to ensure that the developers are on the same page, and that work is not being duplicated or overwritten.</p>
 
   <h2 id="semantic_versioning">Semantic Versioning</h2>
 
@@ -36,12 +36,13 @@
   <p>Because agencies have a fast turn-around for the majority of their projects, there is little time to output many solid API changes, and sometimes have only a single release iteration. Here is one possible usage of the versioning system in regards to an agency release:</p>
 
   <ul>
-    <li><strong>Major Releases</strong> can refer to overall structure of the environment, being <strong>pre-release</strong> prior to solidifying the folder structure and app technologies. Once this is solidified or updated, this should be incremented</li>
+    <li><strong>Major Releases</strong> can refer to overall structure of the environment, being <strong>pre-release</strong> (for example <strong>v0.1.1</strong>) prior to solidifying the folder structure and app technologies. Once this is solidified or updated, this should be incremented (for example <strong>v1.0.1</strong>). This can be used to inform developers of a need to update their system environments to accomidate the change.</li>
 
     <li><strong>Minor Releases</strong> can refer to the majority of major functionality added to the application.</li>
 
     <li><strong>Other Releases</strong> can refer to the bugfixes and hotfixes made to correct an issue, rather than add functionailty.</li>
   </ul>
+
   <h2 id="version_numbers_and_gitflow_branches">Version Numbers And GitFlow Branches</h2>
 
   <p>Here’s what to build from which branch.</p>
